@@ -82,20 +82,20 @@ exports.likePost = function (req,res){
       let strData = JSON.stringify(db)
       try{
         fs.writeFile('db.json',strData,'utf8',()=>{
-        res.status(200).send({msg:"Post Liked"});
+        return res.status(200).send({msg:"Post Liked"});
         })
       }catch(err){
         console.log(err);
-        res.status(500).send({msg:"Something went Wronng"})
+        return res.status(500).send({msg:"Something went Wronng"})
       }
     } else{
-      res.status(400).send({msg:"You already liked this post"})
+      return res.status(400).send({msg:"You already liked this post"})
     }
   } 
   else if(!isValidUser){
-    res.status(400).send({msg:"Username is not valid"})
+    return res.status(400).send({msg:"Username is not valid"})
   } else{
-    res.status(400).send({msg:"id is not valid"})
+    return res.status(400).send({msg:"id is not valid"})
   }
 }
 
@@ -123,15 +123,15 @@ exports.unlikePost = function (req,res){
       let strData = JSON.stringify(db)
       try{
         fs.writeFile('db.json',strData,'utf8',()=>{
-        res.status(200).send({msg:"Post Liked"});
+          return res.status(200).send({msg:"Unliked Post Successfully"})
         })
       } catch(err){
         console.log(err)
-        res.status(500).send({msg:"Something went Wronng"})
+        return res.status(500).send({msg:"Something went Wronng"})
       }
-      res.status(200).send({msg:"Unliked Post Successfully"})
+      
     } else{
-      res.status(400).send({msg:"You Never liked this post"})
+      return res.status(400).send({msg:"You Never liked this post"})
     }
   } 
   else if(!isValidUser){
