@@ -67,13 +67,13 @@ export function Posts(){
 
   useEffect(()=>{
     document.addEventListener('scroll',()=>{
-      if((parseInt(window.scrollY)+parseInt(window.innerHeight)) == (parseInt(document.body.scrollHeight))){
+      if((parseInt(window.scrollY)+parseInt(window.innerHeight)) >= (parseInt(document.body.scrollHeight) - 700) && !startLoading){
         setStartLoading(true);
       }
     });
     return () =>{
       document.removeEventListener('scroll',()=>{
-        if((parseInt(window.scrollY)+parseInt(window.innerHeight)) == (parseInt(document.body.scrollHeight) - 700)){
+        if((parseInt(window.scrollY)+parseInt(window.innerHeight)) == (parseInt(document.body.scrollHeight - 700)) && !startLoading){
           setStartLoading(true);
         }
       });
