@@ -7,3 +7,22 @@ Feel free to like, remove like , comment, delete comment and scroll.
 
 # !!!!!WARNING!!!!!
 Donot mess with db.json file directly
+
+## Running Code Sample
+
+Go to `./client` folder and run
+``` 
+npm install
+npm run start 
+```
+a react server would be started at `localhost:3000`
+
+Go to `./server` folder and run
+```
+npm install
+npm run start
+```
+an express server would be started at `localhost:8000`
+
+### Thant's it.
+Have fun scrolling.....
