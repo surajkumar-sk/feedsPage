@@ -73,7 +73,7 @@ export function Posts(){
     });
     return () =>{
       document.removeEventListener('scroll',()=>{
-        if((parseInt(window.scrollY)+parseInt(window.innerHeight)) == (parseInt(document.body.scrollHeight - 700)) && !startLoading){
+        if((parseInt(window.scrollY)+parseInt(window.innerHeight)) >= (parseInt(document.body.scrollHeight - 700)) && !startLoading){
           setStartLoading(true);
         }
       });
